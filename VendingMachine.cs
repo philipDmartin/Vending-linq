@@ -53,7 +53,8 @@ namespace Vending
         // Return a product with a given ID. Return null if not found.
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            Product ProductId = _products.First(p => p.Id == id);
+            return ProductId;
         }
 
         // Return the cheapest product or null if there are no products
@@ -71,8 +72,9 @@ namespace Vending
         // Return all the product names in alphabetical ordere
         public List<string> GetProductNames()
         {
-            List<string> GetName = _products.Sort(p => p.Name).ToList();
-            return GetName;
+            throw new NotImplementedException();
+            // List<string> GetName = _products.Sort(p => p.Name).ToList();
+            // return GetName;
         }
 
         // Property to represent the total of all the products' prices.
@@ -80,7 +82,7 @@ namespace Vending
         {
             get
             {
-                throw new NotImplementedException();
+                return _products.Sum(p => p.Price);
             }
         }
     }
