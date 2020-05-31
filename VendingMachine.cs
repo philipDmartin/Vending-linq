@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Vending
 {
@@ -19,25 +20,28 @@ namespace Vending
         // Add a new product to the Vending Machine (For stocking machine)
         public void AddProduct(Product newProduct)
         {
-            throw new NotImplementedException();
+            _products.Add(newProduct);
         }
 
         // Remove a product from the Vending Machine (for purchasing a product)
         public void RemoveProduct(Product productToRemove)
         {
-            throw new NotImplementedException();
+            _products.Remove(productToRemove);
         }
 
         // Get all products ordered by price (lowest on top)
         public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+            List<Product> OrderePrice = _products.OrderBy(p => p.Price).ToList();
+            return OrderePrice;
         }
 
-        // Find a product by name. Results should be ordered by name)
+        // Find a product by name. Results should be ordered by name
         public List<Product> SearchByName(string nameCriteria)
         {
             throw new NotImplementedException();
+            // List<Product> OrderName = _products.OrderBy(p => p.Name).ToList();
+            // return OrderName;
         }
 
         // Find a product between a range or prices. Results should be ordered by price
@@ -67,7 +71,8 @@ namespace Vending
         // Return all the product names in alphabetical ordere
         public List<string> GetProductNames()
         {
-            throw new NotImplementedException();
+            List<string> GetName = _products.Sort(p => p.Name).ToList();
+            return GetName;
         }
 
         // Property to represent the total of all the products' prices.

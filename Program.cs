@@ -19,13 +19,13 @@ namespace Vending
                 switch (selection)
                 {
                     case 1:
-                        List<Product> allProudcts = machine.GetAll();
+                        List<Product> allProducts = machine.GetAll();
                         Console.WriteLine("All Products:");
-                        foreach (Product p in allProudcts)
+                        foreach (Product p in allProducts)
                         {
                             p.Display();
                         }
-                        Console.WriteLine($"Total Count: {allProudcts.Count}");
+                        Console.WriteLine($"Total Count: {allProducts.Count}");
                         break;
                     case 2:
                         List<string> names = machine.GetProductNames();
@@ -104,7 +104,7 @@ namespace Vending
                     case 9:
                         Console.WriteLine($"Total Value: {machine.TotalValue}");
                         break;
-                    case 0: 
+                    case 0:
                         Console.WriteLine("Goodbye");
                         return;
                     default:
