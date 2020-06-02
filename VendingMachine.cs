@@ -53,8 +53,8 @@ namespace Vending
         // Return a product with a given ID. Return null if not found.
         public Product GetById(int id)
         {
-            Product ProductId = _products.First(p => p.Id == id);
-            return ProductId;
+            Product PrId = _products.First(p => p.Id == id);
+            return PrId;
         }
 
         // Return the cheapest product or null if there are no products
